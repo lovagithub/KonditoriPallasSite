@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Konditori Pallas</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Konditori Pallas</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" asp-controller="Products" asp-action="Index" asp-route-category="Bageri">Bageri</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Products" asp-action="Index" asp-route-category="Tårtor">Tårtor</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Lunch">Lunch</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">Om oss</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Kontakt</a></li>
+
+                @if (User.Identity?.IsAuthenticated ?? false)
+                {
+                    <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Index">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="User" asp-action="Logout">Logga ut</a></li>
+                }
+                else
+                {
+                    <li class="nav-item"><a class="nav-link" asp-controller="User" asp-action="Index">Logga in</a></li>
+                }
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <footer class="text-center mt-4">
+        <p>&copy; @DateTime.Now.Year Konditori Pallas</p>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
