@@ -1,4 +1,4 @@
-namespace WebCakePalas.Models
+namespace KonditoriPallasSite.Models
 {
     public class ErrorViewModel
     {

@@ -1,0 +1,29 @@
+﻿@model KonditoriPallasSite.Models.UserModel
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <form asp-action="Index" asp-route-returnUrl="@ViewData["ReturnUrl"]">
+        <table>
+            <tr>
+                <td>Användarnamn</td>
+                <td>@Html.EditorFor(m => m.UserName)</td>
+            </tr>
+            <tr>
+                <td>Lösenord</td>
+                <td>@Html.PasswordFor(m => m.Password)</td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Logga in" /> </td>
+            </tr>
+        </table>
+    </form>
+    <p>
+        @ViewBag.ErrorMessage
+    </p>
+    <p>
+        <a asp-action="SignOutUser">Logga ut</a>
+    </p>
+</body>
+</html>

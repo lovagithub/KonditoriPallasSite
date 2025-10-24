@@ -22,7 +22,11 @@
                 @if (User.Identity?.IsAuthenticated ?? false)
                 {
                     <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Index">Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="User" asp-action="Logout">Logga ut</a></li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="User" asp-action="SignOutUser">Logga ut</a>
+                    </li>
+
                 }
                 else
                 {
