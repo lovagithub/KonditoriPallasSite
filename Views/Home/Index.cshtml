@@ -1,17 +1,45 @@
 ﻿@{
-    ViewData["Title"] = "Hem";
+    ViewData["Title"] = "Välkommen till Konditori Pallas";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Välkommen till Konditori Pallas</h1>
-    <p class="lead">Ett klassiskt konditori i hjärtat av Vällingby.</p>
+<section class="hero">
+    <div class="hero-content text-center">
+        <h1>Konditori Pallas</h1>
+        <p class="lead">Ett klassiskt konditori med kärlek för tårtor, bakverk och kaffe.</p>
+        <a href="/Products" class="btn-main">Se våra bakverk</a>
+    </div>
+</section>
 
-    <img src="~/images/pallas.jpg" alt="Konditori Pallas" class="img-fluid rounded shadow-sm my-3" style="max-width:600px;" />
-
+<section class="intro container text-center mt-5">
+    <h2>Välkommen in till oss</h2>
     <p>
-        Vi bakar allt från grunden varje dag — från saftiga kanelbullar och semlor till vackra tårtor
-        och smörgåstårtor. Kom förbi på en fika eller njut av vår populära lunchmeny!
+        Hos Konditori Pallas bakar vi allt från grunden – varje bulle, varje tårta, varje bröd.
+        Vi använder bara de bästa råvarorna för att ge dig den perfekta fikastunden.
     </p>
+</section>
 
-    <a class="btn btn-primary mt-3" asp-controller="Products" asp-action="Index">Se vår meny</a>
-</div>
+<section class="specialties container mt-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <img src="~/images/cake.jpg" class="img-fluid rounded shadow" alt="Tårtor" />
+            <h3>Tårtor</h3>
+            <p>Från prinsesstårta till chokladmousse – alltid nybakade.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/bread.jpg" class="img-fluid rounded shadow" alt="Bageri" />
+            <h3>Bageri</h3>
+            <p>Krispigt bröd och färska bullar – precis som det ska vara.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/coffee.jpg" class="img-fluid rounded shadow" alt="Kaffe" />
+            <h3>Kaffe & Fika</h3>
+            <p>Ta en paus och njut av en perfekt kopp tillsammans med något sött.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta text-center mt-5">
+    <h2>Beställ din tårta idag!</h2>
+    <p>Vi skräddarsyr tårtor för alla tillfällen – födelsedagar, bröllop och fest.</p>
+    <a href="/Home/Contact" class="btn-main">Kontakta oss</a>
+</section>
