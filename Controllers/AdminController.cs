@@ -7,7 +7,7 @@ namespace KonditoriPallasSite.Controllers
 	[Authorize]
 	public class AdminController : Controller
 	{
-		public IActionResult Manage()
+		public IActionResult Index()
 		{
 			// Visa en adminvy (t.ex. hantera beställningar)
 			return View();

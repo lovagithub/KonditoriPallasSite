@@ -5,6 +5,14 @@
     --brown: #5a3e36;
     --white: #fff;
 }
+body {
+    background-image: url('../images/Konditori.jpg');
+    background-size: cover; /* bilden fyller hela ytan */
+    background-position: center; /* centrerad */
+    background-repeat: no-repeat; /* undvik upprepning */
+    background-attachment: fixed; /* bilden sitter fast vid scroll */
+}
+
 
 /* === Hero-sektionen === */
 .hero {
