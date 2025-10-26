@@ -1,0 +1,44 @@
+﻿@model IEnumerable<KonditoriPallasSite.Models.Product>
+@{
+    ViewData["Title"] = "Produkter (Admin)";
+}
+
+<h2 class="mb-3">Produkter (Admin)</h2>
+
+@if (TempData["Ok"] is string msg)
+{
+    <div class="alert alert-success">@msg</div>
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">+ Ny produkt</a>
+</p>
+
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>Namn</th>
+            <th>Beskrivning</th>
+            <th class="text-end">Pris</th>
+            <th>Kategori</th>
+            <th style="width: 120px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Description</td>
+                <td class="text-end">@p.Price.ToString("0.##") kr</td>
+                <td>@p.Category?.Name</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-outline-danger"
+                       asp-action="Delete" asp-route-id="@p.Id">
+                        Ta bort
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

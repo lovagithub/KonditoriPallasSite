@@ -1,0 +1,27 @@
+﻿@model KonditoriPallasSite.Models.Product
+@{
+    ViewData["Title"] = "Ta bort produkt";
+}
+
+<h2>Ta bort produkt</h2>
+
+<div class="alert alert-warning">
+    Är du säker på att du vill ta bort <strong>@Model.Name</strong>?
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">Namn</dt>
+    <dd class="col-sm-10">@Model.Name</dd>
+
+    <dt class="col-sm-2">Pris</dt>
+    <dd class="col-sm-10">@Model.Price.ToString("0.##") kr</dd>
+
+    <dt class="col-sm-2">Kategori</dt>
+    <dd class="col-sm-10">@Model.Category?.Name</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Ta bort</button>
+    <a asp-action="Index" class="btn btn-secondary">Avbryt</a>
+</form>
