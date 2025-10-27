@@ -4,9 +4,9 @@
 
 <section class="hero">
     <div class="hero-content text-center">
-        <h1>Konditori Pallas</h1>
+        <h1 class="hero-title">Konditori Pallas</h1>
         <p class="lead">Ett klassiskt konditori med kärlek för tårtor, bakverk och kaffe.</p>
-        <a href="/Products" class="btn-main">Se våra bakverk</a>
+        <a asp-controller="Products" asp-action="Index" class="btn-main">Se våra bakverk</a>
     </div>
 </section>
 
@@ -21,17 +21,25 @@
 <section class="specialties container mt-5">
     <div class="row text-center">
         <div class="col-md-4">
-            <img src="~/images/cake.jpg" class="img-fluid rounded shadow" alt="Tårtor" />
+            <a asp-controller="Products" asp-action="Index" asp-route-category="Tårtor">
+                <img src="~/images/cake.jpg" class="img-fluid rounded shadow" alt="Tårtor" />
+            </a>
             <h3>Tårtor</h3>
             <p>Från prinsesstårta till chokladmousse – alltid nybakade.</p>
         </div>
+
         <div class="col-md-4">
-            <img src="~/images/bread.jpg" class="img-fluid rounded shadow" alt="Bageri" />
+            <a asp-controller="Products" asp-action="Index" asp-route-category="Bageri">
+                <img src="~/images/bread.jpg" class="img-fluid rounded shadow" alt="Bageri" />
+            </a>
             <h3>Bageri</h3>
             <p>Krispigt bröd och färska bullar – precis som det ska vara.</p>
         </div>
+
         <div class="col-md-4">
-            <img src="~/images/bulle.jpg" class="img-fluid rounded shadow" alt="Bullar" />
+            <a asp-controller="Home" asp-action="Contact">
+                <img src="~/images/bulle.jpg" class="img-fluid rounded shadow" alt="Kaffe & Fika" />
+            </a>
             <h3>Kaffe & Fika</h3>
             <p>Ta en paus och njut av en perfekt kopp tillsammans med något sött.</p>
         </div>
@@ -41,5 +49,6 @@
 <section class="cta text-center mt-5">
     <h2>Beställ din tårta idag!</h2>
     <p>Vi skräddarsyr tårtor för alla tillfällen – födelsedagar, bröllop och fest.</p>
-    <a href="/Home/Contact" class="btn-main">Kontakta oss</a>
+    <a asp-controller="Home" asp-action="Contact" class="btn-main">Kontakta oss</a>
 </section>
+

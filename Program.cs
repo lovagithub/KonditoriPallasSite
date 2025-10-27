@@ -50,4 +50,7 @@ using (var scope = app.Services.CreateScope())
 	SeedData.Initialize(context);    // fyller med demo-data om tomt
 }
 
+
+
+
 app.Run();

@@ -1,5 +1,5 @@
 
-
+/* === F?rgtema === */
 :root {
     --cream: #f8f1e4;
     --gold: #c59d5f;
@@ -9,10 +9,10 @@
 
 body {
     background-image: url('../images/Konditori.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-size: cover; /* bilden fyller hela ytan */
+    background-position: center; /* centrerad */
+    background-repeat: no-repeat; /* undvik upprepning */
+    background-attachment: fixed; /* bilden sitter fast vid scroll */
 }
 
 
