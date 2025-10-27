@@ -7,18 +7,22 @@
     --white: #fff;
 }
 
+/* TA BORT detta om  bild ska vara på startsidan
 body {
     background-image: url('../images/Konditori.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-
+*/
+body {
+    background-color: antiquewhite;
+}
 
 /* === Hero-sektionen === */
 .hero {
-    background-image: url('/images/hero-bakery.jpg');
+    background-image: url('/images/Konditori.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
