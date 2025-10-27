@@ -1,0 +1,46 @@
+﻿@model KonditoriPallasSite.Models.ContactMessage
+@{
+    ViewData["Title"] = "Kontakta oss";
+}
+
+<h2>Kontakta oss</h2>
+
+@if (TempData["Ok"] is string ok)
+{
+    <div class="alert alert-success">@ok</div>
+}
+
+<form asp-action="Contact" method="post" class="mt-3">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Namn</label>
+        <input asp-for="Name" class="form-control" placeholder="Ditt namn" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label">Telefon</label>
+        <input asp-for="Phone" class="form-control" placeholder="07x-xxx xx xx" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">E-post</label>
+        <input asp-for="Email" class="form-control" placeholder="namn@example.com" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Message" class="form-label">Meddelande</label>
+        <textarea asp-for="Message" class="form-control" rows="5" placeholder="Vad vill du beställa?"></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Skicka</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

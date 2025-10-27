@@ -1,0 +1,45 @@
+﻿@model IEnumerable<KonditoriPallasSite.Models.ContactMessage>
+@{
+    ViewData["Title"] = "Kontaktmeddelanden";
+}
+<h2>Kontaktmeddelanden</h2>
+
+@if (TempData["Ok"] is string ok)
+{
+     <div class="alert alert-success">@ok</div>
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Inga meddelanden ännu.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Namn</th>
+                <th>Telefon</th>
+                <th>E-post</th>
+                <th>Meddelande</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@m.SubmittedAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>@m.Name</td>
+                    <td>@m.Phone</td>
+                    <td>@m.Email</td>
+                    <td>@m.Message</td>
+                    <td class="text-end">
+                        <a asp-action="Delete" asp-route-id="@m.Id" class="btn btn-sm btn-outline-danger">Ta bort</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
