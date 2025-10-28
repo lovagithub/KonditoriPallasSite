@@ -1,0 +1,40 @@
+﻿@model IEnumerable<KonditoriPallasSite.Models.Product>
+@{
+    ViewData["Title"] = "Prislista / Meny";
+}
+
+<div class="text-center mb-5">
+    <h1 class="fw-bold">Vår meny</h1>
+    <p class="lead text-muted">Upptäck våra tårtor, bakverk och kaffedrycker.</p>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info text-center">
+        Inga produkter finns just nu. Kom tillbaka senare!
+    </div>
+}
+else
+{
+    @foreach (var categoryGroup in Model.GroupBy(p => p.Category?.Name))
+    {
+        <section class="mb-5">
+            <h3 class="text-center text-brown mb-4 border-bottom pb-2">@categoryGroup.Key</h3>
+
+            <div class="row justify-content-center">
+                @foreach (var item in categoryGroup)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm border-0 h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text text-muted">@item.Description</p>
+                                <p class="fw-bold fs-5 text-brown">@item.Price.ToString("0.00") kr</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+    }
+}

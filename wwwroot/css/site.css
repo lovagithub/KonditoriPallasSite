@@ -61,7 +61,7 @@ body {
         color: var(--white);
     }
 
-/* === Inneh?ll === */
+/*  Innehåll  */
 .intro {
     color: var(--brown);
     max-width: 800px;
@@ -85,6 +85,22 @@ body {
     .cta h2 {
         color: var(--brown);
         margin-bottom: 0.5em;
+    }
+.text-brown {
+    color: #5a3825;
+}
+
+.card-title {
+    color: #5a3825;
+    font-weight: 600;
+}
+
+.card {
+    transition: transform 0.2s ease;
+}
+
+    .card:hover {
+        transform: scale(1.03);
     }
 
 footer {
