@@ -2,7 +2,11 @@
 @{
     ViewData["Title"] = "Ny produkt";
     var categories = (IEnumerable<KonditoriPallasSite.Models.Category>)ViewBag.Categories!;
-}
+}@using Microsoft.AspNetCore.Mvc.Rendering
+<select asp-for="CategoryId" class="form-select"
+        asp-items="@(new SelectList((IEnumerable<KonditoriPallasSite.Models.Category>)ViewBag.Categories, "Id", "Name"))">
+    <option value="">— Välj kategori —</option>
+</select>
 
 <h2>Ny produkt</h2>
 
