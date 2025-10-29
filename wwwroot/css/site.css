@@ -7,7 +7,7 @@
     --white: #fff;
 }
 
-/* TA BORT detta om  bild ska vara på startsidan
+/* använd detta om  bild ska vara på hela startsidan
 body {
     background-image: url('../images/Konditori.jpg');
     background-size: cover;
@@ -20,7 +20,7 @@ body {
     background-color: antiquewhite;
 }
 
-/* === Hero-sektionen === */
+/* Hero-sektionen */
 .hero {
     background-image: url('/images/Konditori.jpg');
     background-position: center;

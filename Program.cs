@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // MVC
 builder.Services.AddControllersWithViews();
 
-// EF Core – koppla din DbContext till connection string "DefaultConnection" i appsettings.json
+// EF Core – kopplar DbContext till connection string "DefaultConnection" i appsettings.json
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -19,7 +19,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 	{
 		o.LoginPath = "/User/Index";      // inloggningssida
 		o.AccessDeniedPath = "/User/Index";
-		// o.LogoutPath = "/User/Logout"; // bara om du vill att /User/Logout ska trigga SignOut automatiskt
+		// o.LogoutPath = "/User/Logout"; // bara om  /User/Logout ska trigga SignOut automatiskt
 	});
 
 var app = builder.Build();
@@ -42,7 +42,7 @@ app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// --- Seed: skapa/uppdatera DB och fyll med exempeldata vid uppstart ---
+//  Seed: skapa/uppdatera DB och fyll med exempeldata vid uppstart 
 using (var scope = app.Services.CreateScope())
 {
 	var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
