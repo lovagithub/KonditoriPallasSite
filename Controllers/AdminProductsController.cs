@@ -47,7 +47,7 @@ namespace KonditoriPallasSite.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		// GET: /AdminProducts/Delete/5
+		// GET: /AdminProducts/Delete/{id}
 		public async Task<IActionResult> Delete(int id)
 		{
 			var product = await _db.Products
@@ -58,7 +58,8 @@ namespace KonditoriPallasSite.Controllers
 			return View(product);
 		}
 
-		// POST: /AdminProducts/Delete/5
+		// POST: /AdminProducts/Delete/{id}
+
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> DeleteConfirmed(int id)

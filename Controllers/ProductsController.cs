@@ -12,7 +12,7 @@ namespace KonditoriPallasSite.Controllers
 		private readonly ApplicationDbContext _db;
 		public ProductsController(ApplicationDbContext db) => _db = db;
 
-		// READ: lista produkter (med valfri filtrering via ?category=...)
+		// READ: lista produkter 
 		public async Task<IActionResult> Index(string? category)
 		{
 			var query = _db.Products.Include(p => p.Category).AsQueryable();

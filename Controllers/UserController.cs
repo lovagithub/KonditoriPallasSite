@@ -14,8 +14,9 @@ namespace KonditoriPallasSite.Controllers
 		{
 			public IActionResult Index(string returnUrl = "")
 			{
-				@ViewData["ReturnUrl"] = returnUrl;
-				return View();
+			ViewData["ReturnUrl"] = returnUrl;
+
+			return View();
 			}
 			// POST: /User
 			[HttpPost]
@@ -59,9 +60,16 @@ namespace KonditoriPallasSite.Controllers
 
 
 			private bool CheckUser(UserModel userModel)
+
+		{   // Kontrollera att userModel och fälten inte är null
+			if (userModel == null ||
+				string.IsNullOrWhiteSpace(userModel.UserName) ||
+				string.IsNullOrWhiteSpace(userModel.Password))
 			{
-				// Hard coded. ToDo: Check in database
-				if (userModel.UserName.ToUpper() == "ADMIN" && userModel.Password == "pwd")
+				return false;
+			}
+			// Hard coded. ToDo: Check in database
+			if (userModel.UserName.ToUpper() == "ADMIN" && userModel.Password == "pwd")
 					return true;
 				else
 					return false;

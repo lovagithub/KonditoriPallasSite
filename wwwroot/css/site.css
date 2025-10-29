@@ -20,7 +20,7 @@ body {
     background-color: antiquewhite;
 }
 
-/* Hero-sektionen */
+
 .hero {
     background-image: url('/images/Konditori.jpg');
     background-position: center;
@@ -61,7 +61,7 @@ body {
         color: var(--white);
     }
 
-/*  Innehåll  */
+
 .intro {
     color: var(--brown);
     max-width: 800px;
